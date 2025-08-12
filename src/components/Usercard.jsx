@@ -3,7 +3,7 @@ import React from "react";
 const Usercard = React.memo(({ user, deleteUser }) => {
   
   return (
-    <div className='bg-white rounded-lg shadow-md p-4'>
+    <div className='bg-white rounded-lg w-1/4 shadow-md p-4'>
       <h2 className='font-bold text-lg'>
         {user.name?.firstname} {user.name?.lastname}
       </h2>

@@ -19,7 +19,7 @@ const Users = () => {
   }
 
   return (
-    <div className='container d-flex flex-wrap justify-content-center gap-3'>
+    <div className='container w-full flex flex-wrap mt-5  justify-left gap-5'>
       {users?.map((user) => (
         <Suspense fallback={<div>Loading card...</div>} key={user.id}>
           <Usercard user={user} />

@@ -20,7 +20,7 @@ const Addusers = () => {
   };
 
   return (
-    <form className='flex flex-col gap-4' onSubmit={handleSubmit(onSubmit)}>
+    <form className='flex w-full flex-col gap-4' onSubmit={handleSubmit(onSubmit)}>
       <label className='flex flex-col'>
         Firstname:
         <input
