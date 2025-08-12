@@ -5,6 +5,7 @@ export const useGetUsers = () => {
   return useQuery({
     queryKey: ['users'],
     queryFn: getUsers,
+    staleTime: Infinity
   });
 };
 
@@ -13,8 +14,8 @@ export const useAddUser = () => {
   return useMutation({
     mutationFn: addUser,
     onSuccess: () => {
-      alert("user created")
       queryClient.invalidateQueries({ queryKey: ['users'] });
+      alert("user created")
     },
   });
 };

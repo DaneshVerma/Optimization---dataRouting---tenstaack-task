@@ -6,7 +6,6 @@ export const UserContext = createContext();
 const UserContextProvider = ({ children }) => {
   const [users, setUsers] = useState([]);
   const [filteredUsers, setFilteredUsers] = useState([]);
-
   const { data: usersData, isLoading, isError } = useGetUsers();
   const { mutate: addUserMutate, isLoading: isAdding } = useAddUser();
   const { mutate: deleteUserMutate, isLoading: isDeleting } = useDeleteUser();
@@ -18,7 +17,10 @@ const UserContextProvider = ({ children }) => {
   if (isError) {
     return <div>Error: {usersData.error.message}</div>;
   }
-
+  const getUser = async () => {
+    setUsers(usersData);
+    setFilteredUsers(usersData);
+  }
   const addUser = async (user) => {
     await addUserMutate(user);
     setUsers((prevUsers) => [...prevUsers, user]);
@@ -34,7 +36,7 @@ const UserContextProvider = ({ children }) => {
   };
 
   return (
-    <UserContext.Provider value={{ users, filteredUsers, addUser, deleteUser }}>
+    <UserContext.Provider value={{ users, isLoading ,isError,filteredUsers, getUser, addUser, deleteUser }}>
       {children}
     </UserContext.Provider>
   );

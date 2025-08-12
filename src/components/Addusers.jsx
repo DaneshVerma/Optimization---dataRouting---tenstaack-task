@@ -15,8 +15,8 @@ const Addusers = () => {
 
   const onSubmit = async (data) => {
     await addUser(data);
-    reset();
     navigate("/users");
+    reset();
   };
 
   return (
