@@ -50,9 +50,10 @@ const Users = () => {
             id='filter'
           >
             <option value='all'>All</option>
-            <option value='j'>starts with j</option>
-            <option value='w'>starts with w</option>
-            <option value='w'>starts with w</option>
+            <option value='j'>starts with J</option>
+            <option value='d'>starts with D</option>
+            <option value='k'>starts with K</option>
+            <option value='w'>starts with W</option>
           </select>
         </div>
       </div>
